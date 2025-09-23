@@ -2,10 +2,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { useEffect } from "react";
 import Footer from "../components/Footer"; // ✅ import your footer
 import Header from "../components/Header"; // ✅ import your header
-
 export default function HomeLoans() {
+  // ✅ Scroll to top on page load
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
   return (
     <>
       {/* Header */}

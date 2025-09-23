@@ -4,8 +4,14 @@ import Header from "@/components/Header"; // ✅ import your header
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { useEffect } from "react";
 
 export default function BusinessLoans() {
+  // ✅ Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       {/* Header */}
@@ -19,8 +25,8 @@ export default function BusinessLoans() {
             Business Loan Services
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
-            Get easy access to business loans with minimal documentation and quick approval. 
-            Fuel your growth with customized loan solutions.
+            Get easy access to business loans with minimal documentation and
+            quick approval. Fuel your growth with customized loan solutions.
           </p>
           <a
             href="https://wa.me/919014424455?text=Hi!%20I%20am%20interested%20in%20Business%20Loans."
@@ -35,20 +41,18 @@ export default function BusinessLoans() {
 
         {/* Why Choose Us */}
         <div className="container mx-auto px-6 grid md:grid-cols-3 gap-8 mb-20">
-          {[
-            "Quick Loan Disbursal",
-            "Low Interest Rates",
-            "Minimal Documentation",
-          ].map((feature, idx) => (
-            <Card key={idx} className="shadow-md border-0">
-              <CardContent className="p-6 text-center">
-                <CheckCircle className="w-10 h-10 text-emerald-500 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {feature}
-                </h3>
-              </CardContent>
-            </Card>
-          ))}
+          {["Quick Loan Disbursal", "Low Interest Rates", "Minimal Documentation"].map(
+            (feature, idx) => (
+              <Card key={idx} className="shadow-md border-0">
+                <CardContent className="p-6 text-center">
+                  <CheckCircle className="w-10 h-10 text-emerald-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {feature}
+                  </h3>
+                </CardContent>
+              </Card>
+            )
+          )}
         </div>
 
         {/* Process Steps */}

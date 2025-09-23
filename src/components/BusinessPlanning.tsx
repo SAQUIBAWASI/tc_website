@@ -4,8 +4,12 @@ import Header from "@/components/Header"; // ✅ import your header
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle } from "lucide-react";
-
+import { useEffect } from "react";
 export default function BusinessPlanning() {
+  // ✅ Scroll to top on page load
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <>
       {/* Header */}
